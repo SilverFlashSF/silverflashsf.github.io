@@ -19,7 +19,7 @@ const PRODUCTS = [
     emoji: "🧴",
     category: "Hair care",
     note: "A Korean scalp ampoule with a brush built into the tip, so it goes straight onto the scalp without getting your hands messy. Non-sticky, no fragrance, with biotin, caffeine and peptides.",
-    link: "https://www.amazon.co.jp/dp/B0GYYKQL9Z",
+    link: "https://link.amazon/B06hhxh1G",
     tag: "hair care"
   },
   {
@@ -27,8 +27,24 @@ const PRODUCTS = [
     emoji: "🫙",
     category: "Skin care",
     note: "The famous budget moisturiser in Japan — a big 180g tub of hatomugi gel for face and body. No fragrance, no colouring, alcohol-free, so it works even on fussy skin. Great after a shower.",
-    link: "https://www.amazon.co.jp/dp/B01BSJ5ZSI",
+    link: "https://link.amazon/B0iBOe1PD",
     tag: "skin care"
+  },
+  {
+    name: "YOLU Calm Night Repair Shampoo (refill)",
+    emoji: "🫧",
+    category: "Hair care",
+    note: "A night-care shampoo — it works on damage while you sleep, so hair feels softer and calmer in the morning. Neroli and peony scent. The refill pouch is cheaper and uses less plastic.",
+    link: "https://link.amazon/B09joeMbI",
+    tag: "hair care"
+  },
+  {
+    name: "YOLU Calm Night Repair Treatment (refill)",
+    emoji: "🌙",
+    category: "Hair care",
+    note: "The matching treatment for the YOLU shampoo. Same idea: repair overnight, moist and smooth finish by morning. Buy the pair together and the routine is done.",
+    link: "https://link.amazon/B0b1DbU5x",
+    tag: "hair care"
   },
   {
     name: "Anker Nano II 65W USB-C Charger",
@@ -39,11 +55,20 @@ const PRODUCTS = [
     tag: "daily carry"
   },
   {
+    name: "Anker Nano Charger (70W, 3 Ports)",
+    emoji: "⚡",
+    category: "Charging",
+    note: "70W across three ports — two USB-C and one USB-A — so a laptop, phone and watch charge at the same time from one small GaN brick. The desk charger, sorted.",
+    link: "https://link.amazon/B02oyGkzJ",
+    tag: "desk"
+  },
+  {
     name: "Anker Zolo USB-C Cable (braided)",
     emoji: "🔋",
     category: "Charging",
     note: "Cheap cables kept fraying on me. This braided one has survived being yanked out of my bag every day for months. Buy two, thank yourself later.",
     link: "https://www.amazon.co.jp/s?k=Anker+Zolo+USB-C+cable",
+
     tag: "daily carry"
   },
   {
@@ -55,11 +80,11 @@ const PRODUCTS = [
     tag: "desk"
   },
   {
-    name: "Kirin Labelless Bottled Water (2L × 9)",
+    name: "Kirin Labelless Natural Water (2L × 9)",
     emoji: "💧",
     category: "Home",
     note: "No labels to peel off before recycling, and a case shows up at the door. In Japan that small laziness adds up — I reorder this constantly.",
-    link: "https://www.amazon.co.jp/s?k=キリン+ラベルレス+水+2L",
+    link: "https://link.amazon/B01BrpzdJ",
     tag: "reorder"
   },
   {

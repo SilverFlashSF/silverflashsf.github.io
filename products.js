@@ -26,7 +26,7 @@ const PRODUCTS = [
     name: "Hatomugi Gel — naturie Skin Conditioning Gel (180g)",
     emoji: "🫙",
     category: "Skin care",
-    note: "The famous budget moisturiser in Japan — a big 180g tub of hatomugi gel for face and body. No fragrance, no colouring, alcohol-free, so it works even on fussy skin. Great after a shower.",
+    note: "Leaves my face feeling smooth, with no sticky feeling afterwards — and it's genuinely cheap for such a big 180g tub. No fragrance, no colouring, alcohol-free, so it suits sensitive skin too. One of those rare products that is both affordable and actually good.",
     link: "https://link.amazon/B0iBOe1PD",
     tag: "skin care"
   },
@@ -34,7 +34,7 @@ const PRODUCTS = [
     name: "YOLU Calm Night Repair Shampoo (refill)",
     emoji: "🫧",
     category: "Hair care",
-    note: "A night-care shampoo — it works on damage while you sleep, so hair feels softer and calmer in the morning. Neroli and peony scent. The refill pouch is cheaper and uses less plastic.",
+    note: "The scent genuinely lasts — two, even three days after washing, my hair still smells of neroli and peony. It's a night-care shampoo that repairs damage while you sleep, and the refill pouch is cheaper and uses less plastic.",
     link: "https://link.amazon/B09joeMbI",
     tag: "hair care"
   },
@@ -42,7 +42,7 @@ const PRODUCTS = [
     name: "YOLU Calm Night Repair Treatment (refill)",
     emoji: "🌙",
     category: "Hair care",
-    note: "The matching treatment for the YOLU shampoo. Same idea: repair overnight, moist and smooth finish by morning. Buy the pair together and the routine is done.",
+    note: "After using this, my hair feels fluffy and smooth — soft, never weighed down. It's the matching treatment for the YOLU shampoo: repair overnight, wake up with hair that's easy to run your fingers through.",
     link: "https://link.amazon/B0b1DbU5x",
     tag: "hair care"
   },
@@ -58,7 +58,7 @@ const PRODUCTS = [
     name: "Anker Nano Charger (70W, 3 Ports)",
     emoji: "⚡",
     category: "Charging",
-    note: "70W across three ports — two USB-C and one USB-A — so a laptop, phone and watch charge at the same time from one small GaN brick. The desk charger, sorted.",
+    note: "I run my iPad and iPhone on this at the same time, and it still handles my Apple Watch on top — all three charging together, and it works perfectly. One small charger that covers everything I carry.",
     link: "https://link.amazon/B02oyGkzJ",
     tag: "desk"
   },
@@ -92,7 +92,7 @@ const PRODUCTS = [
     emoji: "🍚",
     category: "Home",
     note: "Decent everyday rice at a fair price, delivered. Nothing fancy — that's the point. It's a staple, it should be boring and reliable.",
-    link: "https://www.amazon.co.jp/s?k=By+Amazon+ブレンド米+5kg",
+    link: "https://link.amazon/B08go2oxm",
     tag: "reorder"
   },
   {

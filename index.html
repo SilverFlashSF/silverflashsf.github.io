@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stuff I Actually Use — honest everyday picks</title>
+<meta name="description" content="A short list of everyday things I actually buy and use, mostly from Amazon Japan. No hype, just notes.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="site-title">Stuff I Actually Use</div>
+    <nav>
+      <a href="#picks">Picks</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro">
+    <h1>Things I buy, use, and buy again.</h1>
+    <p>This is a small, honest list. Everything here is something I use in my
+    daily life in Japan — chargers that live in my bag, staples that show up
+    at my door. If I wouldn't buy it twice, it's not on this page.</p>
+    <p class="muted">Prices change all the time, so I don't list them — the
+    button takes you to Amazon to check the current one.</p>
+  </section>
+
+  <section id="picks">
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="about">
+    <h2>About this site</h2>
+    <p>Hi — I live in Japan and I got tired of "top 10" lists written by
+    people who never touched the products. This page is the opposite: a
+    short list, written by hand, updated when something earns its place
+    or loses it.</p>
+    <p>Some links are affiliate links. If you buy through them, I get a
+    small commission from Amazon at no extra cost to you — it helps keep
+    this page going. I only list things I genuinely use.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Stuff I Actually Use — a personal page, updated by hand.</p>
+    <p class="disclosure">当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
+    <p class="disclosure">As an Amazon Associate, this site earns from qualifying purchases made through links on this page.</p>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script>
+  function withTag(url) {
+    if (!AFFILIATE_TAG || AFFILIATE_TAG === "YOURTAG-22") return url;
+    var sep = url.indexOf("?") === -1 ? "?" : "&";
+    return url + sep + "tag=" + encodeURIComponent(AFFILIATE_TAG);
+  }
+
+  var grid = document.getElementById("grid");
+  var filters = document.getElementById("filters");
+  var cats = ["All"];
+  PRODUCTS.forEach(function (p) {
+    if (cats.indexOf(p.category) === -1) cats.push(p.category);
+  });
+
+  function render(cat) {
+    grid.innerHTML = "";
+    PRODUCTS.filter(function (p) {
+      return cat === "All" || p.category === cat;
+    }).forEach(function (p) {
+      var card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML =
+        '<div class="tile">' + p.emoji + "</div>" +
+        "<h3>" + p.name + "</h3>" +
+        '<p class="note">' + p.note + "</p>" +
+        '<div class="card-foot">' +
+          '<span class="pill">' + p.tag + "</span>" +
+          '<a class="buy" target="_blank" rel="nofollow sponsored noopener" href="' +
+            withTag(p.link) + '">View on Amazon →</a>' +
+        "</div>";
+      grid.appendChild(card);
+    });
+  }
+
+  cats.forEach(function (c, i) {
+    var b = document.createElement("button");
+    b.textContent = c;
+    if (i === 0) b.className = "active";
+    b.onclick = function () {
+      filters.querySelectorAll("button").forEach(function (x) { x.className = ""; });
+      b.className = "active";
+      render(c);
+    };
+    filters.appendChild(b);
+  });
+
+  render("All");
+</script>
+
+</body>
+</html>

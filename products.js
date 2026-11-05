@@ -23,6 +23,14 @@ const PRODUCTS = [
     tag: "hair care"
   },
   {
+    name: "naturie Hatomugi Skin Conditioning Gel (180g)",
+    emoji: "🫙",
+    category: "Skin care",
+    note: "The famous budget moisturiser in Japan — a big 180g tub of hatomugi gel for face and body. No fragrance, no colouring, alcohol-free, so it works even on fussy skin. Great after a shower.",
+    link: "https://www.amazon.co.jp/dp/B01BSJ5ZSI",
+    tag: "skin care"
+  },
+  {
     name: "Anker Nano II 65W USB-C Charger",
     emoji: "🔌",
     category: "Charging",

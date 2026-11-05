@@ -15,6 +15,14 @@ const AFFILIATE_TAG = "silverflash-22";
 // ============================================================
 const PRODUCTS = [
   {
+    name: "lilyeve Grow Turn Exosome Brush Ampoule (100ml)",
+    emoji: "🧴",
+    category: "Hair care",
+    note: "A Korean scalp ampoule with a brush built into the tip, so it goes straight onto the scalp without getting your hands messy. Non-sticky, no fragrance, with biotin, caffeine and peptides.",
+    link: "https://www.amazon.co.jp/dp/B0GYYKQL9Z",
+    tag: "hair care"
+  },
+  {
     name: "Anker Nano II 65W USB-C Charger",
     emoji: "🔌",
     category: "Charging",

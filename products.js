@@ -4,7 +4,7 @@
 //  tag like "yourname-22". Put it here and every button on
 //  the site earns you commission automatically.
 // ============================================================
-const AFFILIATE_TAG = "YOURTAG-22";
+const AFFILIATE_TAG = "silverflash-22";
 
 // ============================================================
 //  YOUR PRODUCTS — add / remove / edit freely.

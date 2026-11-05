@@ -56,9 +56,11 @@
   </div>
 </footer>
 
-<script src="products.js?v=3"></script>
+<script src="products.js?v=4"></script>
 <script>
   function withTag(url) {
+    // Short links from Associates Central already carry the tag — use them exactly as given.
+    if (url.indexOf("link.amazon") !== -1) return url;
     if (!AFFILIATE_TAG || AFFILIATE_TAG === "YOURTAG-22") return url;
     var sep = url.indexOf("?") === -1 ? "?" : "&";
     return url + sep + "tag=" + encodeURIComponent(AFFILIATE_TAG);

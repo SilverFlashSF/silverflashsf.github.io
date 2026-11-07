@@ -53,6 +53,17 @@ nav a:hover { text-decoration: underline; }
   font-size: 40px; text-align: center; padding: 18px 0 10px;
   background: #f3eee3; border-radius: 4px;
 }
+/* Product photo sits over the emoji tile; if a photo fails to load it
+   removes itself and the emoji shows instead. */
+.ph { position: relative; height: 190px; }
+.ph .tile {
+  height: 100%; display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.pimg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; background: #fff; border-radius: 4px; padding: 8px;
+}
 .card h3 { font-size: 17px; margin: 12px 0 6px; line-height: 1.35; }
 .note { font-size: 14.5px; color: #453e34; flex: 1; margin: 0 0 14px; }
 .card-foot {

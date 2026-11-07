@@ -97,14 +97,4 @@ const PRODUCTS = [
     note: "Decent everyday rice at a fair price, delivered. Nothing fancy — that's the point. It's a staple, it should be boring and reliable.",
     link: "https://link.amazon/B08go2oxm",
     tag: "reorder"
-  },
-  {
-    name: "A simple laptop stand",
-    emoji: "💻",
-    img: "https://m.media-amazon.com/images/I/61i7Bp4elxL._AC_SL1500_.jpg",
-    category: "Desk",
-    note: "Raised my laptop to eye level and my neck stopped hurting by evening. If you study or work at a desk for hours, this is the cheapest fix there is.",
-    link: "https://www.amazon.co.jp/s?k=laptop+stand+aluminum",
-    tag: "desk"
-  }
-];
+  }];

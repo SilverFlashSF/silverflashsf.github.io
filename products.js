@@ -53,15 +53,6 @@ const PRODUCTS = [
     tag: "hair care"
   },
   {
-    name: "Anker Nano II 65W USB-C Charger",
-    emoji: "🔌",
-    img: "https://www.ankerjapan.com/cdn/shop/products/1_f37c4752-e068-4d37-8371-ac1232ee2f6d_1200x1200.png?v=1625704370",
-    category: "Charging",
-    note: "One small charger for my laptop, phone and tablet. It lives in my bag permanently — I stopped carrying three separate bricks around.",
-    link: "https://www.amazon.co.jp/s?k=Anker+Nano+II+65W",
-    tag: "daily carry"
-  },
-  {
     name: "Anker Nano Charger (70W, 3 Ports)",
     emoji: "⚡",
     img: "https://m.media-amazon.com/images/I/61ty6FitB2L._AC_SL1500_.jpg",

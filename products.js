@@ -59,7 +59,7 @@ const PRODUCTS = [
     category: "Charging",
     note: "I run my iPad and iPhone on this at the same time, and it still handles my Apple Watch on top — all three charging together, and it works perfectly. One small charger that covers everything I carry.",
     link: "https://link.amazon/B02oyGkzJ",
-    tag: "desk"
+    tag: "charging"
   },
   {
     name: "Anker Zolo USB-C Cable (braided)",
@@ -69,7 +69,7 @@ const PRODUCTS = [
     note: "Cheap cables kept fraying on me. This braided one has survived being yanked out of my bag every day for months. Buy two, thank yourself later.",
     link: "https://www.amazon.co.jp/s?k=Anker+Zolo+USB-C+cable",
 
-    tag: "daily carry"
+    tag: "charging"
   },
   {
     name: "USB-C Charger for Apple Watch / iPhone",
@@ -78,7 +78,7 @@ const PRODUCTS = [
     category: "Charging",
     note: "If you're in the Apple ecosystem, one magnetic puck at your desk ends the cable mess. Simple thing, but my desk finally looks clean.",
     link: "https://www.amazon.co.jp/s?k=Apple+Watch+charger+USB-C",
-    tag: "desk"
+    tag: "charging"
   },
   {
     name: "Kirin Labelless Natural Water (2L × 9)",
@@ -87,7 +87,7 @@ const PRODUCTS = [
     category: "Home",
     note: "No labels to peel off before recycling, and a case shows up at the door. In Japan that small laziness adds up — I reorder this constantly.",
     link: "https://link.amazon/B01BrpzdJ",
-    tag: "reorder"
+    tag: "home"
   },
   {
     name: "By Amazon Blended Rice (5kg)",
@@ -96,5 +96,5 @@ const PRODUCTS = [
     category: "Home",
     note: "Decent everyday rice at a fair price, delivered. Nothing fancy — that's the point. It's a staple, it should be boring and reliable.",
     link: "https://link.amazon/B08go2oxm",
-    tag: "reorder"
+    tag: "home"
   }];

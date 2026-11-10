@@ -1,44 +1,46 @@
-/* Plain, hand-made look: system fonts, paper background, no gradients. */
+/* Hand-made look, Color Hunt palette:
+   deep blue #425B9A, sky #76C0EC, cream #FFF6DC, pink #FF95A5.
+   https://colorhunt.co/palette/425b9a76c0ecfff6dcff95a5 */
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", "Hiragino Mincho ProN", serif;
-  background: #faf7f2;
-  color: #2b2620;
+  background: #fff6dc;
+  color: #2b2f3a;
   line-height: 1.6;
 }
 
 .wrap { max-width: 860px; margin: 0 auto; padding: 0 18px; }
 
 header {
-  border-bottom: 2px solid #2b2620;
-  background: #fffdf9;
+  background: #425b9a;
+  border-bottom: 4px solid #ff95a5;
 }
 header .wrap {
   display: flex; justify-content: space-between; align-items: baseline;
   padding-top: 16px; padding-bottom: 12px;
 }
-.site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; }
+.site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; color: #fff6dc; }
 nav a {
-  color: #2b2620; text-decoration: none; margin-left: 18px;
+  color: #fff6dc; text-decoration: none; margin-left: 18px;
   font-family: Helvetica, Arial, sans-serif; font-size: 14px;
 }
-nav a:hover { text-decoration: underline; }
+nav a:hover { color: #76c0ec; text-decoration: underline; }
 
 .intro { padding: 34px 0 6px; }
-.intro h1 { font-size: 30px; margin: 0 0 10px; line-height: 1.25; }
+.intro h1 { font-size: 30px; margin: 0 0 10px; line-height: 1.25; color: #425b9a; }
 .intro p { max-width: 620px; }
-.muted { color: #7a7264; font-size: 14px; }
+.muted { color: #6b7690; font-size: 14px; }
 
 .filters { margin: 22px 0 14px; }
 .filters button {
   font-family: Helvetica, Arial, sans-serif; font-size: 13px;
-  background: #fffdf9; color: #2b2620;
-  border: 1px solid #b9b0a0; border-radius: 20px;
+  background: #fffef9; color: #425b9a;
+  border: 1px solid #76c0ec; border-radius: 20px;
   padding: 5px 14px; margin-right: 8px; cursor: pointer;
 }
-.filters button.active { background: #2b2620; color: #faf7f2; }
+.filters button.active { background: #425b9a; color: #fff6dc; border-color: #425b9a; }
 
 .grid {
   display: grid; gap: 16px;
@@ -46,12 +48,13 @@ nav a:hover { text-decoration: underline; }
   padding-bottom: 10px;
 }
 .card {
-  background: #fffdf9; border: 1px solid #ddd5c6; border-radius: 6px;
+  background: #fffef9; border: 1px solid #eadfc0; border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(66, 91, 154, .08);
   padding: 16px; display: flex; flex-direction: column;
 }
 .tile {
   font-size: 40px; text-align: center; padding: 18px 0 10px;
-  background: #f3eee3; border-radius: 4px;
+  background: #e8f3fd; border-radius: 6px;
 }
 /* Product photo sits over the emoji tile; if a photo fails to load it
    removes itself and the emoji shows instead. */
@@ -62,29 +65,30 @@ nav a:hover { text-decoration: underline; }
 }
 .pimg {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: contain; background: #fff; border-radius: 4px; padding: 8px;
+  object-fit: contain; background: #fff; border-radius: 6px; padding: 8px;
 }
-.card h3 { font-size: 17px; margin: 12px 0 6px; line-height: 1.35; }
-.note { font-size: 14.5px; color: #453e34; flex: 1; margin: 0 0 14px; }
+.card h3 { font-size: 17px; margin: 12px 0 6px; line-height: 1.35; color: #425b9a; }
+.note { font-size: 14.5px; color: #454b5c; flex: 1; margin: 0 0 14px; }
 .card-foot {
   display: flex; justify-content: space-between; align-items: center;
 }
 .pill {
   font-family: Helvetica, Arial, sans-serif; font-size: 11px;
-  color: #7a7264; border: 1px solid #d8d0bf; border-radius: 12px;
+  background: #76c0ec; color: #22406f; border-radius: 12px;
   padding: 2px 9px;
 }
 .buy {
   font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;
-  color: #b4551f; text-decoration: none;
+  background: #ff95a5; color: #5b2333; text-decoration: none;
+  border-radius: 16px; padding: 5px 12px;
 }
-.buy:hover { text-decoration: underline; }
+.buy:hover { background: #425b9a; color: #fff6dc; }
 
 #about { padding: 26px 0 10px; max-width: 640px; }
-#about h2 { font-size: 22px; }
+#about h2 { font-size: 22px; color: #425b9a; }
 
 footer {
-  border-top: 1px solid #ddd5c6; margin-top: 30px;
-  padding: 18px 0 30px; font-size: 13px; color: #7a7264;
+  background: #425b9a; margin-top: 30px;
+  padding: 18px 0 30px; font-size: 13px; color: #fff6dc;
 }
-footer .disclosure { font-size: 12px; max-width: 640px; }
+footer .disclosure { font-size: 12px; max-width: 640px; color: #bcd7f5; }

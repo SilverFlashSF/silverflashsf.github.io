@@ -1,46 +1,46 @@
 /* Hand-made look, Color Hunt palette:
-   off-white #F9F7F7, pale blue-grey #DBE2EF, steel blue #3F72AF, navy #112D4E.
-   https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
+   coral #FF7F50, yellow #FFD166, mint #06D6A0, ocean blue #118AB2.
+   https://colorhunt.co/palette/ff7f50ffd16606d6a0118ab2 */
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", "Hiragino Mincho ProN", serif;
-  background: #f9f7f7;
-  color: #1c2b3a;
+  background: #fffaf0;
+  color: #1d323e;
   line-height: 1.6;
 }
 
 .wrap { max-width: 860px; margin: 0 auto; padding: 0 18px; }
 
 header {
-  background: #112d4e;
-  border-bottom: 4px solid #3f72af;
+  background: #118ab2;
+  border-bottom: 4px solid #ff7f50;
 }
 header .wrap {
   display: flex; justify-content: space-between; align-items: baseline;
   padding-top: 16px; padding-bottom: 12px;
 }
-.site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; color: #f9f7f7; }
+.site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; color: #ffffff; }
 nav a {
-  color: #dbe2ef; text-decoration: none; margin-left: 18px;
+  color: #ffd166; text-decoration: none; margin-left: 18px;
   font-family: Helvetica, Arial, sans-serif; font-size: 14px;
 }
-nav a:hover { color: #f9f7f7; text-decoration: underline; }
+nav a:hover { color: #ffffff; text-decoration: underline; }
 
 .intro { padding: 34px 0 6px; }
-.intro h1 { font-size: 30px; margin: 0 0 10px; line-height: 1.25; color: #112d4e; }
+.intro h1 { font-size: 30px; margin: 0 0 10px; line-height: 1.25; color: #118ab2; }
 .intro p { max-width: 620px; }
-.muted { color: #5f7186; font-size: 14px; }
+.muted { color: #6d7f88; font-size: 14px; }
 
 .filters { margin: 22px 0 14px; }
 .filters button {
   font-family: Helvetica, Arial, sans-serif; font-size: 13px;
-  background: #ffffff; color: #3f72af;
-  border: 1px solid #3f72af; border-radius: 20px;
+  background: #ffffff; color: #118ab2;
+  border: 1px solid #118ab2; border-radius: 20px;
   padding: 5px 14px; margin-right: 8px; cursor: pointer;
 }
-.filters button.active { background: #3f72af; color: #f9f7f7; border-color: #3f72af; }
+.filters button.active { background: #118ab2; color: #ffffff; border-color: #118ab2; }
 
 .grid {
   display: grid; gap: 16px;
@@ -48,13 +48,13 @@ nav a:hover { color: #f9f7f7; text-decoration: underline; }
   padding-bottom: 10px;
 }
 .card {
-  background: #ffffff; border: 1px solid #dbe2ef; border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(17, 45, 78, .08);
+  background: #ffffff; border: 1px solid #f2e3c6; border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(17, 138, 178, .10);
   padding: 16px; display: flex; flex-direction: column;
 }
 .tile {
   font-size: 40px; text-align: center; padding: 18px 0 10px;
-  background: #dbe2ef; border-radius: 6px;
+  background: #dcf7ee; border-radius: 6px;
 }
 /* Product photo sits over the emoji tile; if a photo fails to load it
    removes itself and the emoji shows instead. */
@@ -67,28 +67,28 @@ nav a:hover { color: #f9f7f7; text-decoration: underline; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: contain; background: #fff; border-radius: 6px; padding: 8px;
 }
-.card h3 { font-size: 17px; margin: 12px 0 6px; line-height: 1.35; color: #112d4e; }
-.note { font-size: 14.5px; color: #41546e; flex: 1; margin: 0 0 14px; }
+.card h3 { font-size: 17px; margin: 12px 0 6px; line-height: 1.35; color: #118ab2; }
+.note { font-size: 14.5px; color: #41555f; flex: 1; margin: 0 0 14px; }
 .card-foot {
   display: flex; justify-content: space-between; align-items: center;
 }
 .pill {
   font-family: Helvetica, Arial, sans-serif; font-size: 11px;
-  background: #dbe2ef; color: #112d4e; border-radius: 12px;
+  background: #06d6a0; color: #07332a; border-radius: 12px;
   padding: 2px 9px;
 }
 .buy {
   font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;
-  background: #3f72af; color: #f9f7f7; text-decoration: none;
+  background: #ff7f50; color: #ffffff; text-decoration: none;
   border-radius: 16px; padding: 5px 12px;
 }
-.buy:hover { background: #112d4e; color: #f9f7f7; }
+.buy:hover { background: #118ab2; color: #ffffff; }
 
 #about { padding: 26px 0 10px; max-width: 640px; }
-#about h2 { font-size: 22px; color: #112d4e; }
+#about h2 { font-size: 22px; color: #118ab2; }
 
 footer {
-  background: #112d4e; margin-top: 30px;
-  padding: 18px 0 30px; font-size: 13px; color: #dbe2ef;
+  background: #118ab2; margin-top: 30px;
+  padding: 18px 0 30px; font-size: 13px; color: #eaf7fb;
 }
-footer .disclosure { font-size: 12px; max-width: 640px; color: #aebfd8; }
+footer .disclosure { font-size: 12px; max-width: 640px; color: #cdeef7; }

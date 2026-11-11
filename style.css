@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", "Hiragino Mincho ProN", serif;
+  font-family: 'IBM Plex Serif', Georgia, "Hiragino Mincho ProN", serif;
   background: #fffaf0;
   color: #1d323e;
   line-height: 1.6;
@@ -24,7 +24,7 @@ header .wrap {
 .site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; color: #ffffff; }
 nav a {
   color: #ffd166; text-decoration: none; margin-left: 18px;
-  font-family: Helvetica, Arial, sans-serif; font-size: 14px;
+  font-family: 'Rubik', Arial, sans-serif; font-size: 14px;
 }
 nav a:hover { color: #ffffff; text-decoration: underline; }
 
@@ -43,7 +43,7 @@ nav a:hover { color: #ffffff; text-decoration: underline; }
 }
 .lang-pop button {
   display: block; width: 100%; text-align: left;
-  font-family: Helvetica, Arial, sans-serif; font-size: 13.5px;
+  font-family: 'Rubik', Arial, sans-serif; font-size: 13.5px;
   background: transparent; color: #1d323e; border: none;
   padding: 7px 10px; border-radius: 6px; cursor: pointer;
 }
@@ -58,7 +58,7 @@ nav a:hover { color: #ffffff; text-decoration: underline; }
 
 .filters { margin: 22px 0 14px; }
 .filters button {
-  font-family: Helvetica, Arial, sans-serif; font-size: 13px;
+  font-family: 'Rubik', Arial, sans-serif; font-size: 13px;
   background: #ffffff; color: #118ab2;
   border: 1px solid #118ab2; border-radius: 20px;
   padding: 5px 14px; margin-right: 8px; cursor: pointer;
@@ -96,12 +96,12 @@ nav a:hover { color: #ffffff; text-decoration: underline; }
   display: flex; justify-content: space-between; align-items: center;
 }
 .pill {
-  font-family: Helvetica, Arial, sans-serif; font-size: 11px;
+  font-family: 'Rubik', Arial, sans-serif; font-size: 11px;
   background: #06d6a0; color: #07332a; border-radius: 12px;
   padding: 2px 9px;
 }
 .buy {
-  font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;
+  font-family: 'Rubik', Arial, sans-serif; font-size: 14px; font-weight: bold;
   background: #ff7f50; color: #ffffff; text-decoration: none;
   border-radius: 16px; padding: 5px 12px;
 }

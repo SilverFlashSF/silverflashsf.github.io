@@ -22,6 +22,7 @@ header .wrap {
   padding-top: 16px; padding-bottom: 12px;
 }
 .site-title { font-size: 22px; font-weight: bold; letter-spacing: .2px; color: #ffffff; }
+a.site-title { text-decoration: none; cursor: pointer; }
 nav a {
   color: #ffd166; text-decoration: none; margin-left: 18px;
   font-family: 'Rubik', Arial, sans-serif; font-size: 14px;

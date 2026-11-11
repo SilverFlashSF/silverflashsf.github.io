@@ -6,9 +6,12 @@
 <title>Bioscope Premium — First time buying here? — Amhantone</title>
 <meta name="description" content="For Bioscope app users buying premium on Amhantone for the first time: transfer to our member list with the 6-digit code from your app, then premium is switched on. ¥180 per month, PayPay.">
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <style>
   .notice-strip {
-    background: #06d6a0; color: #07332a; font-family: Helvetica, Arial, sans-serif;
+    background: #06d6a0; color: #07332a; font-family: 'Rubik', Arial, sans-serif;
     font-size: 13.5px; font-weight: bold; text-align: center;
     padding: 7px 12px;
   }
@@ -27,7 +30,7 @@
   a.mini-card { display: block; text-decoration: none; cursor: pointer; transition: box-shadow .15s ease, border-color .15s ease; }
   a.mini-card:hover { border-color: #118ab2; box-shadow: 0 4px 14px rgba(17, 138, 178, .25); }
   .mini-card .go {
-    display: inline-block; margin-top: 10px; font-family: Helvetica, Arial, sans-serif;
+    display: inline-block; margin-top: 10px; font-family: 'Rubik', Arial, sans-serif;
     font-size: 13.5px; font-weight: bold; color: #ff7f50;
   }
   .plans {
@@ -44,39 +47,39 @@
   .plan .badges { display: flex; gap: 5px; flex-wrap: wrap; }
   .plan .dur { font-weight: bold; color: #118ab2; font-size: 16px; }
   .plan .bonus {
-    display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
+    display: inline-block; font-family: 'Rubik', Arial, sans-serif; font-size: 11px;
     background: #06d6a0; color: #07332a; border-radius: 12px; padding: 2px 9px; margin-left: 0;
   }
   .plan .best {
-    display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
+    display: inline-block; font-family: 'Rubik', Arial, sans-serif; font-size: 11px;
     background: #ff7f50; color: #ffffff; border-radius: 12px; padding: 2px 9px; margin-left: 0;
   }
   .plan .yen { font-weight: bold; font-size: 16px; }
-  .plan .mmk { font-size: 12.5px; color: #6d7f88; font-family: Helvetica, Arial, sans-serif; }
+  .plan .mmk { font-size: 12.5px; color: #6d7f88; font-family: 'Rubik', Arial, sans-serif; }
   .pay-flex { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start; }
-  .qr-box { text-align: center; font-family: Helvetica, Arial, sans-serif; }
+  .qr-box { text-align: center; font-family: 'Rubik', Arial, sans-serif; }
   .qr-box .qr-cap { font-size: 13px; color: #41555f; margin-top: 8px; max-width: 190px; }
   .qr-box .qr-brand { font-weight: bold; color: #ff7f50; font-size: 17px; margin-bottom: 6px; }
   form.order { max-width: 520px; flex: 1; min-width: 280px; }
   form.order label {
-    display: block; font-family: Helvetica, Arial, sans-serif;
+    display: block; font-family: 'Rubik', Arial, sans-serif;
     font-size: 13.5px; font-weight: bold; color: #1d323e; margin: 14px 0 5px;
   }
   form.order .hint { font-weight: normal; color: #6d7f88; font-size: 12.5px; }
   form.order input[type="text"], form.order input[type="email"],
   form.order select {
-    width: 100%; font-family: Helvetica, Arial, sans-serif; font-size: 15px;
+    width: 100%; font-family: 'Rubik', Arial, sans-serif; font-size: 15px;
     padding: 9px 11px; border: 1px solid #118ab2; border-radius: 8px; background: #ffffff;
   }
-  form.order input[type="file"] { font-family: Helvetica, Arial, sans-serif; font-size: 13.5px; }
+  form.order input[type="file"] { font-family: 'Rubik', Arial, sans-serif; font-size: 13.5px; }
   form.order button[type="submit"] {
-    margin-top: 20px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold;
+    margin-top: 20px; font-family: 'Rubik', Arial, sans-serif; font-size: 16px; font-weight: bold;
     background: #ff7f50; color: #ffffff; border: none; border-radius: 20px;
     padding: 11px 26px; cursor: pointer; width: 100%;
   }
   form.order button[type="submit"]:hover { background: #118ab2; }
   form.order button[type="submit"]:disabled { background: #9db8c2; cursor: wait; }
-  #form-msg { font-family: Helvetica, Arial, sans-serif; font-size: 14.5px; margin-top: 14px; }
+  #form-msg { font-family: 'Rubik', Arial, sans-serif; font-size: 14.5px; margin-top: 14px; }
   #form-msg.ok { color: #087f5b; font-weight: bold; }
   #form-msg.err { color: #c92a2a; font-weight: bold; }
 </style>
@@ -165,7 +168,7 @@
       </div>
 
       <form class="order" id="order-form">
-        <p style="font-family:Helvetica, Arial, sans-serif; font-size:14px; margin:16px 0 0;">
+        <p style="font-family:'Rubik', Arial, sans-serif; font-size:14px; margin:16px 0 0;">
           This form is for <strong>Bioscope app users buying here for the first time</strong>.
           Bought here before? Use <a href="bioscope.html#pay-order">the renewal form</a> instead.
         </p>

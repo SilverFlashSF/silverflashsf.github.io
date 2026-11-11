@@ -15,6 +15,7 @@
     <nav>
       <a href="#picks" id="t-picks">Picks</a>
       <a href="#about" id="t-about">About</a>
+      <a href="bioscope.html">Bioscope</a>
       <span class="lang-menu">
         <button type="button" id="lang-btn" title="Language / 言語" aria-haspopup="true" aria-expanded="false">🌐</button>
         <span class="lang-pop" id="lang-pop" hidden>
@@ -36,6 +37,10 @@
     <p class="muted" id="t-prices">Prices change all the time, so I don't list them — the
     button takes you to Amazon to check the current one.</p>
   </section>
+
+  <p style="background:#dcf7ee; border:1px solid #06d6a0; border-radius:10px; padding:12px 16px; font-family:Helvetica, Arial, sans-serif; font-size:14.5px;">
+    <a id="t-bio" href="bioscope.html" style="color:#118ab2; font-weight:bold; text-decoration:none;">🎬 New: Bioscope Premium for Myanmar in Japan — ¥180/month via PayPay →</a>
+  </p>
 
   <section id="picks">
     <div class="filters" id="filters"></div>
@@ -81,6 +86,7 @@
       aboutH: "About this site",
       aboutP: "Hi — I live in Japan and I got tired of \"top 10\" lists written by people who never touched the products. This page is the opposite: a short list, written by hand, updated when something earns its place or loses it.",
       foot: "Amhantone — stuff I actually use. A personal page, updated by hand.",
+      bio: "🎬 New: Bioscope Premium for Myanmar in Japan — ¥180/month via PayPay →",
       buy: "View on Amazon →",
       cats: { "All": "All", "Hair care": "Hair care", "Skin care": "Skin care", "Charging": "Charging", "Home": "Home" }
     },
@@ -93,6 +99,7 @@
       aboutH: "このサイトについて",
       aboutP: "こんにちは — 日本に住んでいます。「トップ10」みたいなリストに飽きました。書いた本人が一度も触ったことのない商品ばかりだからです。このページはその逆です。短いリストを手書きで、ふさわしいと思った時に追加し、そうでなくなったら外します。",
       foot: "Amhantone — 本当に使っているもの。手作業で更新している個人ページです。",
+      bio: "🎬 新登場：在日ミャンマー人向け Bioscope プレミアム — 月額180円（PayPay）→",
       buy: "Amazonで見る →",
       cats: { "All": "すべて", "Hair care": "ヘアケア", "Skin care": "スキンケア", "Charging": "充電グッズ", "Home": "日用品" }
     },
@@ -182,6 +189,7 @@
     document.getElementById("t-about-h").textContent = s.aboutH;
     document.getElementById("t-about-p").textContent = s.aboutP;
     document.getElementById("t-foot").textContent = s.foot;
+    document.getElementById("t-bio").textContent = s.bio;
     document.querySelectorAll("#lang-pop button").forEach(function (b) {
       b.className = b.getAttribute("data-lang") === l ? "on" : "";
     });

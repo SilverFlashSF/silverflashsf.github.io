@@ -24,6 +24,13 @@
   }
   .mini-card h3 { font-size: 16px; margin: 0 0 6px; color: #118ab2; }
   .mini-card p { font-size: 14.5px; color: #41555f; margin: 0; }
+  a.mini-card { display: block; text-decoration: none; cursor: pointer; transition: box-shadow .15s ease, border-color .15s ease; }
+  a.mini-card:hover { border-color: #118ab2; box-shadow: 0 4px 14px rgba(17, 138, 178, .25); }
+  .mini-card .fake-link { color: #118ab2; text-decoration: underline; font-weight: bold; }
+  .mini-card .go {
+    display: inline-block; margin-top: 10px; font-family: Helvetica, Arial, sans-serif;
+    font-size: 13.5px; font-weight: bold; color: #ff7f50;
+  }
   .plans {
     display: grid; gap: 10px; margin: 18px 0 8px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -96,7 +103,7 @@
     list yet, so the first time works a little differently: we transfer your account
     onto our member list using a <strong>6-digit code sent to your Bioscope app</strong>,
     then switch on your premium. From the second time on, you use the quick
-    <a href="bioscope.html">renewal form</a> instead.</p>
+    <a href="bioscope.html#pay-order">renewal form</a> instead.</p>
   </section>
 
   <section>
@@ -133,11 +140,12 @@
   </section>
 
   <div class="two-cards">
-    <div class="mini-card">
+    <a class="mini-card card-link" href="bioscope.html#pay-order">
       <h3>Bought here before?</h3>
       <p>You're already on our member list — skip the code step and use the
-      <a href="bioscope.html">renewal form</a>.</p>
-    </div>
+      <span class="fake-link">renewal form</span>.</p>
+      <span class="go">Go to the renewal form →</span>
+    </a>
     <div class="mini-card">
       <h3>Totally new to Bioscope?</h3>
       <p>New sign-ups (accounts created from zero) are not open yet. Please check back later.</p>
@@ -157,7 +165,7 @@
       <form class="order" id="order-form">
         <p style="font-family:Helvetica, Arial, sans-serif; font-size:14px; margin:16px 0 0;">
           This form is for <strong>Bioscope app users buying here for the first time</strong>.
-          Bought here before? Use <a href="bioscope.html">the renewal form</a> instead.
+          Bought here before? Use <a href="bioscope.html#pay-order">the renewal form</a> instead.
         </p>
         <input type="hidden" id="f-type" value="app_user">
         <label>Your name *

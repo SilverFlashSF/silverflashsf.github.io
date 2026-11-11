@@ -26,16 +26,19 @@
   .plan {
     background: #ffffff; border: 1px solid #f2e3c6; border-radius: 10px;
     padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 2px 6px rgba(17, 138, 178, .08);
+    gap: 10px; box-shadow: 0 2px 6px rgba(17, 138, 178, .08);
   }
+  .plan .pl { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .plan .pr { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; white-space: nowrap; }
+  .plan .badges { display: flex; gap: 5px; flex-wrap: wrap; }
   .plan .dur { font-weight: bold; color: #118ab2; font-size: 16px; }
   .plan .bonus {
     display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
-    background: #06d6a0; color: #07332a; border-radius: 12px; padding: 2px 9px; margin-left: 6px;
+    background: #06d6a0; color: #07332a; border-radius: 12px; padding: 2px 9px; margin-left: 0;
   }
   .plan .best {
     display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
-    background: #ff7f50; color: #ffffff; border-radius: 12px; padding: 2px 9px; margin-left: 6px;
+    background: #ff7f50; color: #ffffff; border-radius: 12px; padding: 2px 9px; margin-left: 0;
   }
   .plan .yen { font-weight: bold; font-size: 16px; }
   .plan .mmk { font-size: 12.5px; color: #6d7f88; font-family: Helvetica, Arial, sans-serif; }
@@ -124,18 +127,18 @@
     paid by <strong>PayPay</strong>. Longer plans come with free extra days, and several of
     them are only available through resellers like us, not on Bioscope's own website.</p>
     <div class="plans">
-      <div class="plan"><span class="dur">1 Month</span><span><span class="yen">¥180</span> <span class="mmk">5,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">2 Months</span><span><span class="yen">¥360</span> <span class="mmk">10,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">3 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥540</span> <span class="mmk">15,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">4 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥720</span> <span class="mmk">20,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">5 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥900</span> <span class="mmk">25,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">6 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,080</span> <span class="mmk">30,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">7 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,260</span> <span class="mmk">35,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">8 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,440</span> <span class="mmk">40,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">9 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,620</span> <span class="mmk">45,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">10 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,800</span> <span class="mmk">50,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">11 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,980</span> <span class="mmk">55,000 MMK</span></span></div>
-      <div class="plan"><span class="dur">12 Months</span><span class="bonus">+60 days free</span><span class="best">best value</span><span><span class="yen">¥2,160</span> <span class="mmk">60,000 MMK</span></span></div>
+      <div class="plan"><div class="pl"><span class="dur">1 Month</span></div><div class="pr"><span class="yen">¥180</span><span class="mmk">5,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">2 Months</span></div><div class="pr"><span class="yen">¥360</span><span class="mmk">10,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">3 Months</span><span class="badges"><span class="bonus">+7 days free</span></span></div><div class="pr"><span class="yen">¥540</span><span class="mmk">15,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">4 Months</span><span class="badges"><span class="bonus">+7 days free</span></span></div><div class="pr"><span class="yen">¥720</span><span class="mmk">20,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">5 Months</span><span class="badges"><span class="bonus">+7 days free</span></span></div><div class="pr"><span class="yen">¥900</span><span class="mmk">25,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">6 Months</span><span class="badges"><span class="bonus">+30 days free</span></span></div><div class="pr"><span class="yen">¥1,080</span><span class="mmk">30,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">7 Months</span><span class="badges"><span class="bonus">+30 days free</span></span></div><div class="pr"><span class="yen">¥1,260</span><span class="mmk">35,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">8 Months</span><span class="badges"><span class="bonus">+30 days free</span></span></div><div class="pr"><span class="yen">¥1,440</span><span class="mmk">40,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">9 Months</span><span class="badges"><span class="bonus">+37 days free</span></span></div><div class="pr"><span class="yen">¥1,620</span><span class="mmk">45,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">10 Months</span><span class="badges"><span class="bonus">+37 days free</span></span></div><div class="pr"><span class="yen">¥1,800</span><span class="mmk">50,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">11 Months</span><span class="badges"><span class="bonus">+37 days free</span></span></div><div class="pr"><span class="yen">¥1,980</span><span class="mmk">55,000 MMK</span></div></div>
+      <div class="plan"><div class="pl"><span class="dur">12 Months</span><span class="badges"><span class="bonus">+60 days free</span><span class="best">best value</span></span></div><div class="pr"><span class="yen">¥2,160</span><span class="mmk">60,000 MMK</span></div></div>
     </div>
   </section>
 

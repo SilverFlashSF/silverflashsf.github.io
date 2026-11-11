@@ -98,12 +98,13 @@
     </nav>
   </div>
 </header>
-<div class="notice-strip">NEW — Bioscope Premium is now available here for Myanmar people living in Japan 🇲🇲</div>
+<div class="notice-strip">🚧 INITIAL VERSION — not selling yet. Sales start soon; we're getting ready.</div>
 
 <main class="wrap">
 
   <section class="intro">
     <h1>Bioscope Premium — movies &amp; series with Burmese subtitles</h1>
+    <p class="muted"><strong>Initial version:</strong> this shop is not selling yet — we're preparing, and sales will start soon.</p>
     <p>Bioscope is the streaming app that used to be <strong>Channel Myanmar</strong>:
     K-dramas, movies, anime and more, with proper Burmese subtitles, on Android,
     iOS, Android TV and computer. One premium account works on up to 2 devices.</p>
@@ -138,9 +139,8 @@
       <li><strong>Pay with PayPay</strong> using the QR code below — pick your plan
       from the list above and pay its yen price.</li>
       <li><strong>Send your order</strong> on this page: your name and Gmail address,
-      the plan you paid for, whether you are new or returning, the 6-digit code from
-      your Bioscope app (only if you already use the app), and a screenshot of your
-      PayPay payment.</li>
+      the plan you paid for, whether you are new or returning, and a screenshot of
+      your PayPay payment.</li>
       <li><strong>We activate your premium.</strong> Returning members are renewed on the
       same Gmail. New members are added to the member list first, then activated.</li>
     </ol>
@@ -149,10 +149,9 @@
   <div class="two-cards">
     <div class="mini-card">
       <h3>New here?</h3>
-      <p>Two cases, both easy. Already use the Bioscope app? We send a 6-digit code
-      to your app — pass it to us and we transfer you onto our member list. Never
-      used Bioscope? We create your member account for you and send you the login.
-      Either way, we need your Gmail.</p>
+      <p>Never used Bioscope? We create your member account for you and send you
+      the login — we just need your name and Gmail. (Already use the Bioscope app
+      but never bought here? A separate form for you is coming soon.)</p>
     </div>
     <div class="mini-card">
       <h3>Already bought here before?</h3>
@@ -182,7 +181,6 @@
         <label>Are you… *</label>
         <div class="radios">
           <label><input type="radio" name="member_type" value="returning" required> Already bought here before (renewal)</label>
-          <label><input type="radio" name="member_type" value="app_user"> New here — I already use the Bioscope app</label>
           <label><input type="radio" name="member_type" value="brand_new"> New here — I don't have a Bioscope account yet</label>
         </div>
         <label>Plan *
@@ -201,10 +199,6 @@
             <option value="11 Months (Extra 37 Days)" data-months="11" data-yen="1980">11 Months (+37 days free) — ¥1,980</option>
             <option value="12 Months (Extra 60 Days)" data-months="12" data-yen="2160">12 Months (+60 days free) — ¥2,160</option>
           </select>
-        </label>
-        <label>6-digit code from your Bioscope app
-          <span class="hint">— only if you already use the app and we ask for a transfer code; leave blank otherwise, we will contact you if it is needed</span>
-          <input type="text" id="f-code" inputmode="numeric" maxlength="6" placeholder="e.g. 123456">
         </label>
         <label>PayPay payment screenshot *
           <span class="hint">— after you pay, screenshot the PayPay completion screen (image, max 5MB)</span>
@@ -275,7 +269,6 @@
     var typeEl = document.querySelector('input[name="member_type"]:checked');
     var planSel = document.getElementById("f-plan");
     var planOpt = planSel.options[planSel.selectedIndex];
-    var code = document.getElementById("f-code").value.trim();
     var file = document.getElementById("f-shot").files[0];
     if (!name || !email || !typeEl || !planOpt.value) {
       msg.className = "err"; msg.textContent = "Please fill in every * field."; return;
@@ -291,7 +284,7 @@
         name: name, email: email, member_type: typeEl.value,
         plan: planOpt.value, months: parseInt(planOpt.getAttribute("data-months"), 10),
         price_yen: parseInt(planOpt.getAttribute("data-yen"), 10),
-        app_code: code || null, screenshot_path: path
+        app_code: null, screenshot_path: path
       });
     }).then(function (res) {
       if (res.error) throw res.error;

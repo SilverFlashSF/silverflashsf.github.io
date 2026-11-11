@@ -20,6 +20,7 @@
         <span class="lang-pop" id="lang-pop" hidden>
           <button type="button" data-lang="en">English</button>
           <button type="button" data-lang="ja">日本語</button>
+          <button type="button" data-lang="my">မြန်မာ</button>
         </span>
       </span>
     </nav>
@@ -60,7 +61,7 @@
   </div>
 </footer>
 
-<script src="products.js?v=10"></script>
+<script src="products.js?v=11"></script>
 <script>
   function withTag(url) {
     // Short links from Associates Central already carry the tag — use them exactly as given.
@@ -95,13 +96,25 @@
       foot: "Amhantone — 本当に使っているもの。手作業で更新している個人ページです。",
       buy: "Amazonで見る →",
       cats: { "All": "すべて", "Hair care": "ヘアケア", "Skin care": "スキンケア", "Charging": "充電グッズ", "Home": "日用品" }
+    },
+    my: {
+      title: "Amhantone — တကယ်သုံးနေတဲ့ပစ္စည်းများ",
+      picks: "ရွေးချယ်မှု", about: "ဒီဆိုက်အကြောင်း",
+      h1: "ဝယ်တယ်၊ သုံးတယ်၊ ပြန်ဝယ်တယ်။",
+      intro: "ဒါဟာ သေးငယ်ပေမယ့် ရိုးသားတဲ့ စာရင်းတစ်ခုပါ။ ဒီမှာပါတာအားလုံးဟာ ဂျပန်မှာ နေ့စဉ်ဘဝထဲ တကယ်သုံးနေတဲ့ပစ္စည်းတွေပါ — အိတ်ထဲမှာ အမြဲပါတဲ့ အားသွင်းကိရိယာတွေကနေ အိမ်တံခါးဆီ ရောက်လာတဲ့ နေ့သုံးပစ္စည်းတွေအထိ။ နှစ်ခါပြန်မဝယ်မယ့်ပစ္စည်းဆိုရင် ဒီစာမျက်နှာမှာ မပါပါဘူး။",
+      prices: "ဈေးနှုန်းတွေက အမြဲပြောင်းနေတာမို့ မရေးထားပါဘူး — ခလုတ်ကိုနှိပ်ပြီး Amazon မှာ လက်ရှိဈေးကို စစ်ကြည့်ပါ။",
+      aboutH: "ဒီဆိုက်အကြောင်း",
+      aboutP: "မင်္ဂလာပါ — ကျွန်တော် ဂျပန်မှာ နေပါတယ်။ ကိုယ်တိုင်တစ်ခါမှ မထိဖူးတဲ့ ပစ္စည်းတွေအကြောင်း ရေးထားတဲ့ \"ထိပ်ဆုံး ၁၀ ခု\" စာရင်းတွေကို ငြီးငွေ့လာလို့ပါ။ ဒီစာမျက်နှာက အဲဒါနဲ့ ဆန့်ကျင်ဘက်ပါ — တိုတောင်းတဲ့စာရင်း၊ လက်နဲ့ရေးထားတာ၊ ပစ္စည်းတစ်ခုက နေရာရထိုက်တဲ့အခါ ထည့်ပြီး၊ မရထိုက်တော့တဲ့အခါ ဖြုတ်ပါတယ်။",
+      foot: "Amhantone — တကယ်သုံးနေတဲ့ပစ္စည်းများ။ လက်နဲ့ အပ်ဒိတ်လုပ်နေတဲ့ ကိုယ်ပိုင်စာမျက်နှာပါ။",
+      buy: "Amazon မှာ ကြည့်ရန် →",
+      cats: { "All": "အားလုံး", "Hair care": "ဆံပင်စောင့်ရှောက်မှု", "Skin care": "အသားအရေစောင့်ရှောက်မှု", "Charging": "အားသွင်းပစ္စည်းများ", "Home": "အိမ်သုံးပစ္စည်းများ" }
     }
   };
 
   var lang = "ja";
   try {
     var saved = localStorage.getItem("amhantone-lang");
-    if (saved === "en" || saved === "ja") lang = saved;
+    if (saved === "en" || saved === "ja" || saved === "my") lang = saved;
   } catch (e) {}
 
   var grid = document.getElementById("grid");
@@ -122,8 +135,8 @@
     PRODUCTS.filter(function (p) {
       return cat === "All" || p.category === cat;
     }).forEach(function (p) {
-      var name = lang === "ja" && p.name_ja ? p.name_ja : p.name;
-      var note = lang === "ja" && p.note_ja ? p.note_ja : p.note;
+      var name = p["name_" + lang] || p.name;
+      var note = p["note_" + lang] || p.note;
       var card = document.createElement("article");
       card.className = "card";
       card.innerHTML =
@@ -160,7 +173,7 @@
     lang = l;
     try { localStorage.setItem("amhantone-lang", l); } catch (e) {}
     var s = STRINGS[l];
-    document.documentElement.lang = l === "ja" ? "ja" : "en";
+    document.documentElement.lang = l;
     document.title = s.title;
     document.getElementById("t-picks").textContent = s.picks;
     document.getElementById("t-about").textContent = s.about;

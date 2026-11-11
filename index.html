@@ -13,8 +13,11 @@
   <div class="wrap">
     <div class="site-title">Amhantone</div>
     <nav>
-      <a href="#picks">Picks</a>
-      <a href="#about">About</a>
+      <a href="#picks" id="t-picks">Picks</a>
+      <a href="#about" id="t-about">About</a>
+      <span class="lang-toggle">
+        <button type="button" id="lang-en">EN</button><button type="button" id="lang-ja">日本語</button>
+      </span>
     </nav>
   </div>
 </header>
@@ -22,11 +25,11 @@
 <main class="wrap">
 
   <section class="intro">
-    <h1>Things I buy, use, and buy again.</h1>
-    <p>This is a small, honest list. Everything here is something I use in my
+    <h1 id="t-h1">Things I buy, use, and buy again.</h1>
+    <p id="t-intro">This is a small, honest list. Everything here is something I use in my
     daily life in Japan — chargers that live in my bag, staples that show up
     at my door. If I wouldn't buy it twice, it's not on this page.</p>
-    <p class="muted">Prices change all the time, so I don't list them — the
+    <p class="muted" id="t-prices">Prices change all the time, so I don't list them — the
     button takes you to Amazon to check the current one.</p>
   </section>
 
@@ -36,8 +39,8 @@
   </section>
 
   <section id="about">
-    <h2>About this site</h2>
-    <p>Hi — I live in Japan and I got tired of "top 10" lists written by
+    <h2 id="t-about-h">About this site</h2>
+    <p id="t-about-p">Hi — I live in Japan and I got tired of "top 10" lists written by
     people who never touched the products. This page is the opposite: a
     short list, written by hand, updated when something earns its place
     or loses it.</p>
@@ -47,13 +50,13 @@
 
 <footer>
   <div class="wrap">
-    <p>Amhantone — stuff I actually use. A personal page, updated by hand.</p>
+    <p id="t-foot">Amhantone — stuff I actually use. A personal page, updated by hand.</p>
     <p class="disclosure">当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
     <p class="disclosure">As an Amazon Associate, this site earns from qualifying purchases made through links on this page.</p>
   </div>
 </footer>
 
-<script src="products.js?v=9"></script>
+<script src="products.js?v=10"></script>
 <script>
   function withTag(url) {
     // Short links from Associates Central already carry the tag — use them exactly as given.
@@ -63,48 +66,116 @@
     return url + sep + "tag=" + encodeURIComponent(AFFILIATE_TAG);
   }
 
+  // ---- Language (EN / 日本語) ----
+  var STRINGS = {
+    en: {
+      title: "Amhantone — stuff I actually use",
+      picks: "Picks", about: "About",
+      h1: "Things I buy, use, and buy again.",
+      intro: "This is a small, honest list. Everything here is something I use in my daily life in Japan — chargers that live in my bag, staples that show up at my door. If I wouldn't buy it twice, it's not on this page.",
+      prices: "Prices change all the time, so I don't list them — the button takes you to Amazon to check the current one.",
+      aboutH: "About this site",
+      aboutP: "Hi — I live in Japan and I got tired of \"top 10\" lists written by people who never touched the products. This page is the opposite: a short list, written by hand, updated when something earns its place or loses it.",
+      foot: "Amhantone — stuff I actually use. A personal page, updated by hand.",
+      buy: "View on Amazon →",
+      cats: { "All": "All", "Hair care": "Hair care", "Skin care": "Skin care", "Charging": "Charging", "Home": "Home" }
+    },
+    ja: {
+      title: "Amhantone — 本当に使っているもの",
+      picks: "おすすめ", about: "このサイトについて",
+      h1: "買って、使って、また買うもの。",
+      intro: "ここは小さな正直リストです。載っているのは全部、日本での毎日の暮らしで実際に使っているもの — バッグに入っている充電器から、家のドアまで届く日用品まで。2回買わないものは、このページには載せません。",
+      prices: "価格はすぐ変わるので載せていません — ボタンからAmazonで今の価格を確認してください。",
+      aboutH: "このサイトについて",
+      aboutP: "こんにちは — 日本に住んでいます。「トップ10」みたいなリストに飽きました。書いた本人が一度も触ったことのない商品ばかりだからです。このページはその逆です。短いリストを手書きで、ふさわしいと思った時に追加し、そうでなくなったら外します。",
+      foot: "Amhantone — 本当に使っているもの。手作業で更新している個人ページです。",
+      buy: "Amazonで見る →",
+      cats: { "All": "すべて", "Hair care": "ヘアケア", "Skin care": "スキンケア", "Charging": "充電グッズ", "Home": "日用品" }
+    }
+  };
+
+  var lang = "ja";
+  try {
+    var saved = localStorage.getItem("amhantone-lang");
+    if (saved === "en" || saved === "ja") lang = saved;
+  } catch (e) {}
+
   var grid = document.getElementById("grid");
   var filters = document.getElementById("filters");
   var cats = ["All"];
   PRODUCTS.forEach(function (p) {
     if (cats.indexOf(p.category) === -1) cats.push(p.category);
   });
+  var currentCat = "All";
+
+  function catLabel(c) {
+    return STRINGS[lang].cats[c] || c;
+  }
 
   function render(cat) {
+    currentCat = cat;
     grid.innerHTML = "";
     PRODUCTS.filter(function (p) {
       return cat === "All" || p.category === cat;
     }).forEach(function (p) {
+      var name = lang === "ja" && p.name_ja ? p.name_ja : p.name;
+      var note = lang === "ja" && p.note_ja ? p.note_ja : p.note;
       var card = document.createElement("article");
       card.className = "card";
       card.innerHTML =
         '<div class="ph"><div class="tile">' + p.emoji + "</div>" +
           (p.img ? '<img class="pimg" loading="lazy" alt="" src="' + p.img + '" onerror="this.remove()">' : "") +
         "</div>" +
-        "<h3>" + p.name + "</h3>" +
-        '<p class="note">' + p.note + "</p>" +
+        "<h3>" + name + "</h3>" +
+        '<p class="note">' + note + "</p>" +
         '<div class="card-foot">' +
-          '<span class="pill">' + p.tag + "</span>" +
+          '<span class="pill">' + catLabel(p.category) + "</span>" +
           '<a class="buy" target="_blank" rel="nofollow sponsored noopener" href="' +
-            withTag(p.link) + '">View on Amazon →</a>' +
+            withTag(p.link) + '">' + STRINGS[lang].buy + "</a>" +
         "</div>";
       grid.appendChild(card);
     });
   }
 
-  cats.forEach(function (c, i) {
-    var b = document.createElement("button");
-    b.textContent = c;
-    if (i === 0) b.className = "active";
-    b.onclick = function () {
-      filters.querySelectorAll("button").forEach(function (x) { x.className = ""; });
-      b.className = "active";
-      render(c);
-    };
-    filters.appendChild(b);
-  });
+  function buildFilters() {
+    filters.innerHTML = "";
+    cats.forEach(function (c) {
+      var b = document.createElement("button");
+      b.textContent = catLabel(c);
+      if (c === currentCat) b.className = "active";
+      b.onclick = function () {
+        filters.querySelectorAll("button").forEach(function (x) { x.className = ""; });
+        b.className = "active";
+        render(c);
+      };
+      filters.appendChild(b);
+    });
+  }
 
-  render("All");
+  function setLang(l) {
+    lang = l;
+    try { localStorage.setItem("amhantone-lang", l); } catch (e) {}
+    var s = STRINGS[l];
+    document.documentElement.lang = l === "ja" ? "ja" : "en";
+    document.title = s.title;
+    document.getElementById("t-picks").textContent = s.picks;
+    document.getElementById("t-about").textContent = s.about;
+    document.getElementById("t-h1").textContent = s.h1;
+    document.getElementById("t-intro").textContent = s.intro;
+    document.getElementById("t-prices").textContent = s.prices;
+    document.getElementById("t-about-h").textContent = s.aboutH;
+    document.getElementById("t-about-p").textContent = s.aboutP;
+    document.getElementById("t-foot").textContent = s.foot;
+    document.getElementById("lang-en").className = l === "en" ? "on" : "";
+    document.getElementById("lang-ja").className = l === "ja" ? "on" : "";
+    buildFilters();
+    render(currentCat);
+  }
+
+  document.getElementById("lang-en").onclick = function () { setLang("en"); };
+  document.getElementById("lang-ja").onclick = function () { setLang("ja"); };
+
+  setLang(lang);
 </script>
 
 </body>

@@ -19,6 +19,26 @@
   }
   .price-card .amount { font-size: 34px; font-weight: bold; color: #118ab2; }
   .price-card .per { font-size: 16px; color: #41555f; }
+  .plans {
+    display: grid; gap: 10px; margin: 18px 0 8px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .plan {
+    background: #ffffff; border: 1px solid #f2e3c6; border-radius: 10px;
+    padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 6px rgba(17, 138, 178, .08);
+  }
+  .plan .dur { font-weight: bold; color: #118ab2; font-size: 16px; }
+  .plan .bonus {
+    display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
+    background: #06d6a0; color: #07332a; border-radius: 12px; padding: 2px 9px; margin-left: 6px;
+  }
+  .plan .best {
+    display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 11px;
+    background: #ff7f50; color: #ffffff; border-radius: 12px; padding: 2px 9px; margin-left: 6px;
+  }
+  .plan .yen { font-weight: bold; font-size: 16px; }
+  .plan .mmk { font-size: 12.5px; color: #6d7f88; font-family: Helvetica, Arial, sans-serif; }
   .steps { max-width: 640px; }
   .steps li { margin-bottom: 10px; }
   .two-cards {
@@ -64,20 +84,36 @@
     no need to find someone back home to pay in kyat.</p>
   </section>
 
-  <div class="price-card">
-    <div><span class="amount">¥180</span> <span class="per">/ month (≈ 5,000 MMK)</span></div>
-    <p class="note" style="margin-top:8px;">The same monthly premium plan Bioscope itself sells.
-    Pay by <strong>PayPay</strong> — that's all we accept for now.</p>
-  </div>
+  <section>
+    <h2 style="color:#118ab2;">Plans &amp; prices</h2>
+    <p>Every plan Bioscope offers, at the same prices — <strong>¥180 per month</strong>,
+    paid by <strong>PayPay</strong>. Longer plans come with free extra days, and several of
+    them are only available through resellers like us, not on Bioscope's own website.</p>
+    <div class="plans">
+      <div class="plan"><span class="dur">1 Month</span><span><span class="yen">¥180</span> <span class="mmk">5,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">2 Months</span><span><span class="yen">¥360</span> <span class="mmk">10,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">3 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥540</span> <span class="mmk">15,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">4 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥720</span> <span class="mmk">20,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">5 Months</span><span class="bonus">+7 days free</span><span><span class="yen">¥900</span> <span class="mmk">25,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">6 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,080</span> <span class="mmk">30,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">7 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,260</span> <span class="mmk">35,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">8 Months</span><span class="bonus">+30 days free</span><span><span class="yen">¥1,440</span> <span class="mmk">40,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">9 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,620</span> <span class="mmk">45,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">10 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,800</span> <span class="mmk">50,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">11 Months</span><span class="bonus">+37 days free</span><span><span class="yen">¥1,980</span> <span class="mmk">55,000 MMK</span></span></div>
+      <div class="plan"><span class="dur">12 Months</span><span class="bonus">+60 days free</span><span class="best">best value</span><span><span class="yen">¥2,160</span> <span class="mmk">60,000 MMK</span></span></div>
+    </div>
+  </section>
 
   <section>
     <h2 style="color:#118ab2;">How to buy</h2>
     <ol class="steps">
-      <li><strong>Pay ¥180 with PayPay</strong> using the QR code below (per month —
-      pay for as many months as you want in one payment).</li>
-      <li><strong>Send your order</strong> on this page: your Gmail address, whether you are
-      new or returning, the one-time code shown in your Bioscope app (new members only),
-      and a screenshot of your PayPay payment.</li>
+      <li><strong>Pay with PayPay</strong> using the QR code below — pick your plan
+      from the list above and pay its yen price.</li>
+      <li><strong>Send your order</strong> on this page: your name and Gmail address,
+      the plan you paid for, whether you are new or returning, the 6-digit code from
+      your Bioscope app (only if you already use the app), and a screenshot of your
+      PayPay payment.</li>
       <li><strong>We activate your premium.</strong> Returning members are renewed on the
       same Gmail. New members are added to the member list first, then activated.</li>
     </ol>
@@ -85,10 +121,11 @@
 
   <div class="two-cards">
     <div class="mini-card">
-      <h3>New to Bioscope?</h3>
-      <p>Install the Bioscope app and sign in with your Gmail first. The app shows a
-      one-time code — we need that code to add you to the member list and switch on
-      your premium.</p>
+      <h3>New here?</h3>
+      <p>Two cases, both easy. Already use the Bioscope app? We send a 6-digit code
+      to your app — pass it to us and we transfer you onto our member list. Never
+      used Bioscope? We create your member account for you and send you the login.
+      Either way, we need your Gmail.</p>
     </div>
     <div class="mini-card">
       <h3>Already bought here before?</h3>

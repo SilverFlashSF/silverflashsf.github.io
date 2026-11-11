@@ -138,9 +138,9 @@
     <ol class="steps">
       <li><strong>Pay with PayPay</strong> using the QR code below — pick your plan
       from the list above and pay its yen price.</li>
-      <li><strong>Send your order</strong> on this page: your name and Gmail address,
-      the plan you paid for, whether you are new or returning, and a screenshot of
-      your PayPay payment.</li>
+      <li><strong>Send your order</strong> with the form on this page: your name and
+      Gmail address, the plan you paid for, and a screenshot of your PayPay
+      payment. (Renewals only for now — see below.)</li>
       <li><strong>We activate your premium.</strong> Returning members are renewed on the
       same Gmail. New members are added to the member list first, then activated.</li>
     </ol>
@@ -148,10 +148,11 @@
 
   <div class="two-cards">
     <div class="mini-card">
-      <h3>New here?</h3>
-      <p>Never used Bioscope? We create your member account for you and send you
-      the login — we just need your name and Gmail. (Already use the Bioscope app
-      but never bought here? A separate form for you is coming soon.)</p>
+      <h3>First time buying here?</h3>
+      <p>Already use the Bioscope app but never bought on this website? You'll get
+      your own form soon — because first we need the 6-digit code from your app
+      to add you to our member list. Totally new to Bioscope? New sign-ups are
+      not open yet.</p>
     </div>
     <div class="mini-card">
       <h3>Already bought here before?</h3>
@@ -178,11 +179,11 @@
           <span class="hint">— the account your premium goes on</span>
           <input type="email" id="f-email" required autocomplete="email" placeholder="you@gmail.com">
         </label>
-        <label>Are you… *</label>
-        <div class="radios">
-          <label><input type="radio" name="member_type" value="returning" required> Already bought here before (renewal)</label>
-          <label><input type="radio" name="member_type" value="brand_new"> New here — I don't have a Bioscope account yet</label>
-        </div>
+        <p style="font-family:Helvetica, Arial, sans-serif; font-size:14px; margin:16px 0 0;">
+          This form is for <strong>customers who have bought here before</strong> (renewals).
+          First time buying here, or totally new to Bioscope? Your turn is coming soon — see the notes above.
+        </p>
+        <input type="hidden" id="f-type" value="returning">
         <label>Plan *
           <select id="f-plan" required>
             <option value="" data-months="" data-yen="">Choose a plan…</option>
@@ -266,11 +267,11 @@
     msg.className = ""; msg.textContent = "";
     var name = document.getElementById("f-name").value.trim();
     var email = document.getElementById("f-email").value.trim();
-    var typeEl = document.querySelector('input[name="member_type"]:checked');
+    var typeValue = document.getElementById("f-type").value;
     var planSel = document.getElementById("f-plan");
     var planOpt = planSel.options[planSel.selectedIndex];
     var file = document.getElementById("f-shot").files[0];
-    if (!name || !email || !typeEl || !planOpt.value) {
+    if (!name || !email || !planOpt.value) {
       msg.className = "err"; msg.textContent = "Please fill in every * field."; return;
     }
     if (!file) { msg.className = "err"; msg.textContent = "Please attach your PayPay payment screenshot."; return; }
@@ -281,7 +282,7 @@
     sb.storage.from("payment-screenshots").upload(path, file).then(function (up) {
       if (up.error) throw up.error;
       return sb.from("orders").insert({
-        name: name, email: email, member_type: typeEl.value,
+        name: name, email: email, member_type: typeValue,
         plan: planOpt.value, months: parseInt(planOpt.getAttribute("data-months"), 10),
         price_yen: parseInt(planOpt.getAttribute("data-yen"), 10),
         app_code: null, screenshot_path: path

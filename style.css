@@ -28,6 +28,16 @@ nav a {
 }
 nav a:hover { color: #ffffff; text-decoration: underline; }
 
+.lang-toggle { margin-left: 18px; }
+.lang-toggle button {
+  font-family: Helvetica, Arial, sans-serif; font-size: 12px;
+  background: transparent; color: #ffd166;
+  border: 1px solid #ffd166; padding: 3px 9px; cursor: pointer;
+}
+.lang-toggle button:first-child { border-radius: 12px 0 0 12px; }
+.lang-toggle button:last-child { border-radius: 0 12px 12px 0; border-left: none; }
+.lang-toggle button.on { background: #ffd166; color: #118ab2; font-weight: bold; }
+
 .intro { padding: 34px 0 6px; }
 .intro h1 { font-size: 30px; margin: 0 0 10px; line-height: 1.25; color: #118ab2; }
 .intro p { max-width: 620px; }

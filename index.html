@@ -15,8 +15,12 @@
     <nav>
       <a href="#picks" id="t-picks">Picks</a>
       <a href="#about" id="t-about">About</a>
-      <span class="lang-toggle">
-        <button type="button" id="lang-en">EN</button><button type="button" id="lang-ja">日本語</button>
+      <span class="lang-menu">
+        <button type="button" id="lang-btn" title="Language / 言語" aria-haspopup="true" aria-expanded="false">🌐</button>
+        <span class="lang-pop" id="lang-pop" hidden>
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="ja">日本語</button>
+        </span>
       </span>
     </nav>
   </div>
@@ -166,14 +170,38 @@
     document.getElementById("t-about-h").textContent = s.aboutH;
     document.getElementById("t-about-p").textContent = s.aboutP;
     document.getElementById("t-foot").textContent = s.foot;
-    document.getElementById("lang-en").className = l === "en" ? "on" : "";
-    document.getElementById("lang-ja").className = l === "ja" ? "on" : "";
+    document.querySelectorAll("#lang-pop button").forEach(function (b) {
+      b.className = b.getAttribute("data-lang") === l ? "on" : "";
+    });
     buildFilters();
     render(currentCat);
   }
 
-  document.getElementById("lang-en").onclick = function () { setLang("en"); };
-  document.getElementById("lang-ja").onclick = function () { setLang("ja"); };
+  var langBtn = document.getElementById("lang-btn");
+  var langPop = document.getElementById("lang-pop");
+  function closePop() {
+    langPop.hidden = true;
+    langBtn.setAttribute("aria-expanded", "false");
+  }
+  langBtn.onclick = function (ev) {
+    ev.stopPropagation();
+    var open = langPop.hidden;
+    if (open) {
+      langPop.hidden = false;
+      langBtn.setAttribute("aria-expanded", "true");
+    } else {
+      closePop();
+    }
+  };
+  langPop.querySelectorAll("button").forEach(function (b) {
+    b.onclick = function () {
+      setLang(b.getAttribute("data-lang"));
+      closePop();
+    };
+  });
+  document.addEventListener("click", function (ev) {
+    if (!langPop.hidden && !langPop.contains(ev.target)) closePop();
+  });
 
   setLang(lang);
 </script>

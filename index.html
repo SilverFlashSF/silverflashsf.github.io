@@ -45,6 +45,10 @@
     <a id="t-bio" href="bioscope.html" style="color:#118ab2; font-weight:bold; text-decoration:none;">🎬 New: Bioscope Premium for Myanmar in Japan — ¥180/month via PayPay →</a>
   </p>
 
+  <!-- AdSense: ONE small banner in normal flow — never sticky, never a pop-up.
+       Stays completely hidden until a publisher ID is set in ads.js. -->
+  <div id="ad-slot" class="ad-slot" hidden></div>
+
   <section id="picks">
     <div class="filters" id="filters"></div>
     <div class="grid" id="grid"></div>
@@ -65,10 +69,12 @@
     <p id="t-foot">Amhantone — stuff I actually use. A personal page.</p>
     <p class="disclosure">当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
     <p class="disclosure">As an Amazon Associate, this site earns from qualifying purchases made through links on this page.</p>
+    <p class="disclosure"><a href="privacy.html" style="color:#cdeef7;">Privacy policy / プライバシーポリシー</a></p>
   </div>
 </footer>
 
 <script src="products.js?v=11"></script>
+<script src="ads.js?v=1"></script>
 <script>
   function withTag(url) {
     // Short links from Associates Central already carry the tag — use them exactly as given.

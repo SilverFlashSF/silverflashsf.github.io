@@ -16,8 +16,14 @@
 //  - Never sticky, never floating, never a pop-up / overlay.
 //  - If Google has no ad to show, the slot collapses to nothing.
 // ============================================================
-var ADSENSE_CLIENT = ""; // e.g. "ca-pub-XXXXXXXXXXXXXXXX"
-var ADSENSE_SLOT = "";   // e.g. "1234567890"
+var ADSENSE_CLIENT = "ca-pub-2528882598466223";
+var ADSENSE_SLOT = "";   // still empty — fill after AdSense approval, when a Display ad unit exists. Banner stays hidden until then; the verification snippet lives in each page's <head>.
+
+// Owner's ad-content rule: NORMAL ads only — no 18+ / adult ads.
+// That filter is set in the AdSense dashboard (Blocking controls >
+// Sensitive categories: Sexual, Dating, Alcohol, Gambling blocked),
+// not in code. The snippet alone serves Google's standard,
+// non-explicit ad inventory for a general-audience site like this one.
 
 (function () {
   if (!ADSENSE_CLIENT || !ADSENSE_SLOT) return; // ads off — stay invisible

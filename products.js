@@ -107,7 +107,7 @@ const PRODUCTS = [
     note: "If you're in the Apple ecosystem, one magnetic puck at your desk ends the cable mess. Simple thing, but my desk finally looks clean.",
     note_ja: "Apple製品を使っているなら、デスクにマグネット式の充電パックがひとつあるだけで、ケーブルのごちゃごちゃが終わります。シンプルだけど、デスクがようやくすっきりしました。",
     note_my: "Apple ပစ္စည်းတွေ သုံးတဲ့သူဆိုရင် စားပွဲပေါ်မှာ သံလိုက်အားသွင်းစက် တစ်ခုရှိရုံနဲ့ ကြိုးရှုပ်ထွေးမှုတွေ ပြီးဆုံးသွားတယ်။ ရိုးရှင်းတဲ့ပစ္စည်းပေမယ့် ကျွန်တော့်စားပွဲ နောက်ဆုံးတော့ သန့်ရှင်းသွားပြီ။",
-    link: "https://www.amazon.co.jp/s?k=Apple+Watch+charger+USB-C",
+    link: "https://link.amazon/B0eOaPpic",
     tag: "charging"
   },
   {
